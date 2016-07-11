@@ -35,7 +35,6 @@ describe('Select', () => {
     // проверим, что свойства установлены правильно
     expect(props.name).toBe('test-select');
     expect(props.value).toBe('test1');
-    expect(props.disabled).toBe(false);
     expect(
       select.find('option').length
     ).toBe(4);
@@ -59,9 +58,7 @@ describe('Select', () => {
     select.setProps({ ...props, options: [] });
     expect(
       select.find('option').length
-    ).toBe(1);
-    // ... должно быть выставлено свойство disabled
-    expect(select.props().disabled).toBe(true);
+    ).toBe(0);
   });
 
   it('should call onChange', () => {

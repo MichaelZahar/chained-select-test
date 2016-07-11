@@ -12,8 +12,12 @@ const defaultEmpty = { text: '--', value: '' };
 export default ({ name, value, options, onChange, empty = defaultEmpty }) => {
   const withoutOptions = options.length === 0;
 
+  if (withoutOptions) {
+    return null;
+  }
+
   return (
-    <select name={name} value={value} onChange={onChange} disabled={withoutOptions}>
+    <select name={name} value={value} onChange={onChange}>
       <option key="-1" value={empty.value}>{empty.text}</option>
       {options && options.map((option, i) => (<option key={i} value={option.value}>{option.name}</option>))}
     </select>
