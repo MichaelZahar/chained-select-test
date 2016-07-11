@@ -9,7 +9,7 @@
 const fs = require('fs');
 const cheerio = require('cheerio');
 
-fs.readFile('src/index.html', 'utf8', (err, markup) => {
+fs.readFile('src/client/index.html', 'utf8', (err, markup) => {
   if (err) {
     return console.log(err);
   }
